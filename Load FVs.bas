@@ -75,6 +75,11 @@ Loop
             Cells(i, "B").Value = "'001"
             Cells(i, "B").NumberFormat = "@"
         End If
+
+            'For DC FV Company Codes only'
+        If Cells(i, "B").Value = "66" Then
+         Cells(i, "B").Value = "'066"
+        Cells(i, "B").NumberFormat = "@"
     Next i
 
     MsgBox counter & " file(s) from folder has been successfully loaded into the Master Template!", vbInformation, "FV60 Loader"

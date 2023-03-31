@@ -1,4 +1,3 @@
-Attribute VB_Name = "Module1"
 Sub Load_FV60s()
 
     Dim sourceFolder As String
@@ -16,7 +15,7 @@ Sub Load_FV60s()
 
 sourceFolder = "G:\COR_TXC\MOTOR FUEL\Keski - Motor Fuel\FVs\"
 Set entryWs = ThisWorkbook.Sheets("Entry")
-
+        'load all files from source folder if .xlsx file contains text "FV60" in file names'
 Dim filename As String
 filename = Dir(sourceFolder & "*FV60*.xlsx")
 Do While filename <> ""
@@ -46,6 +45,7 @@ Loop
     Range("G10:G999").NumberFormat = "MM/DD/YYYY"
     Range("M10:M999").NumberFormat = "MM/DD/YYYY"
     
+'loop through value in column Y, if any cells contains value, round value into 2 decimal places'
     For Each cell In Range("Y10:Y999")
         If Not IsEmpty(cell.Value) Then
             cell.Value = Round(cell.Value, 2)

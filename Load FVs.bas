@@ -12,8 +12,8 @@ Sub Load_FV60s()
         .Value = vbNullString
         .ClearFormats
     End With
-
-sourceFolder = "G:\COR_TXC\MOTOR FUEL\Keski - Motor Fuel\FVs\"
+    'loader files from path located on cell C1
+sourceFolder = ThisWorkbook.Sheets("Entry").Range("C1").Value
 Set entryWs = ThisWorkbook.Sheets("Entry")
         'load all files from source folder if .xlsx file contains text "FV60" in file names'
 Dim filename As String

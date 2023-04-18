@@ -46,11 +46,13 @@ Loop
     Range("M10:M999").NumberFormat = "MM/DD/YYYY"
     
 'loop through value in column Y, if any cells contains value, round value into 2 decimal places'
-    For Each cell In Range("Y10:Y999")
-        If Not IsEmpty(cell.Value) Then
-            cell.Value = Round(cell.Value, 2)
-        End If
-    Next cell
+On Error Resume Next
+For Each cell In Range("Y10:Y999")
+    If Not IsEmpty(cell.Value) Then
+        cell.Value = Round(cell.Value, 2)
+    End If
+Next cell
+On Error GoTo 0
     
  
     

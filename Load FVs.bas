@@ -54,7 +54,7 @@ For Each cell In Range("Y10:Y999")
 Next cell
 On Error GoTo 0
     
- 
+     Range("I10:I999").NumberFormat = "#,###0.00"
     
     'if range within column Y contains value of 0, then entire row delete.'
     
